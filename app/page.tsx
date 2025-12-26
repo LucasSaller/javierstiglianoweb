@@ -8,19 +8,28 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
 
       {/* Hero Section */}
-      <section className="relative bg-background py-20 lg:py-32 overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 skew-x-12 translate-x-10 blur-3xl rounded-full" />
+      <section className="relative bg-background pt-8 pb-20 md:py-24 lg:py-32 text-foreground overflow-hidden">
+        {/* Background Patterns & Effects */}
+        <div className="absolute inset-0 w-full h-full opacity-[0.15] dark:opacity-[0.05] pointer-events-none"
+          style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '32px 32px' }}>
+        </div>
+
+        {/* Spotlights */}
+        <div className="absolute top-0 -left-1/4 w-1/2 h-full bg-primary/10 blur-[120px] rounded-full dark:opacity-20 pointer-events-none" />
+        <div className="absolute top-0 -right-1/4 w-1/2 h-full bg-primary/20 skew-x-12 translate-x-10 blur-[120px] rounded-full dark:opacity-30 pointer-events-none" />
+        <div className="absolute -bottom-1/2 left-1/4 w-1/2 h-full bg-primary/10 blur-[120px] rounded-full dark:opacity-20 pointer-events-none" />
+
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl space-y-6">
+          <div className="max-w-4xl space-y-6 text-left">
             <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
               <span className="flex h-2 w-2 rounded-full bg-primary mr-2"></span>
               Atención en Haedo y CABA
             </div>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-tight">
-              Especialista en <span className="text-primary">Mastología</span> <br />
+              Especialista en <span className="text-primary">Mastología</span> <br className="hidden md:block" />
               y Salud de la Mujer
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
               Dr. Javier Stigliano. Diagnóstico preciso, tratamiento humano y acompañamiento integral. Jefe de Patología Mamaria del Hospital Posadas.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
@@ -75,8 +84,9 @@ export default function Home() {
       </section>
 
       {/* Specialties Preview */}
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
+      <section className="py-24 bg-muted/30 relative text-foreground overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl font-bold text-foreground mb-4">Áreas de Atención</h2>
             <p className="text-muted-foreground">
@@ -130,12 +140,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Preview */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
+      <section className="py-24 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-1/2 relative">
-              <div className="aspect-square rounded-2xl bg-muted overflow-hidden relative shadow-2xl skew-y-3">
+            <div className="md:w-1/2 relative group">
+              {/* Decorative background for the photo */}
+              <div className="absolute -inset-4 bg-primary/10 rounded-[2rem] blur-2xl group-hover:bg-primary/20 transition-colors duration-500" />
+              <div className="aspect-square rounded-2xl bg-muted overflow-hidden relative shadow-2xl skew-y-3 transition-transform duration-500 group-hover:skew-y-0 group-hover:scale-[1.02]">
                 {/* Placeholder for Doctor's Photo */}
                 <img
                   src="/dr-stigliano.jpg"
