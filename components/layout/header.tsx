@@ -55,7 +55,7 @@ export function Header() {
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center gap-6">
+                <nav className="hidden lg:flex items-center gap-6">
                     {navItems.map((item) => {
                         const isActive = pathname === item.href
                         return (
@@ -77,9 +77,9 @@ export function Header() {
                 </nav>
 
                 {/* Desktop CTA */}
-                <div className="hidden md:flex items-center gap-3">
+                <div className="hidden lg:flex items-center gap-3">
                     <ModeToggle />
-                    <Button variant="outline" size="sm" asChild className="hidden lg:flex">
+                    <Button variant="outline" size="sm" asChild className="hidden xl:flex">
                         <Link href="https://wa.me/5491130246736" target="_blank">
                             <Phone className="w-4 h-4 mr-2" />
                             WhatsApp
@@ -94,7 +94,7 @@ export function Header() {
                 </div>
 
                 {/* Mobile Controls */}
-                <div className="flex md:hidden items-center gap-2">
+                <div className="flex lg:hidden items-center gap-2">
                     <ModeToggle />
                     <Sheet>
                         <SheetTrigger asChild>

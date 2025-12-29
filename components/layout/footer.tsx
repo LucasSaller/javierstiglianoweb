@@ -38,7 +38,7 @@ export function Footer() {
                     </div>
 
                     {/* Contact Column */}
-                    <div className="lg:col-span-2">
+                    <div className="md:col-span-2">
                         <h3 className="font-semibold text-primary mb-4">Información de Contacto</h3>
                         <div className="grid sm:grid-cols-2 gap-4">
                             <div className="space-y-3 text-sm">
