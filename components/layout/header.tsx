@@ -93,70 +93,73 @@ export function Header() {
                     </Button>
                 </div>
 
-                {/* Mobile Menu */}
-                <Sheet>
-                    <SheetTrigger asChild>
-                        <Button variant="ghost" size="icon" className="md:hidden">
-                            <Menu className="w-6 h-6" />
-                            <span className="sr-only">Menú</span>
-                        </Button>
-                    </SheetTrigger>
-                    <SheetContent side="right" className="w-[300px] sm:w-[350px] border-l-border p-6 pt-14 bg-background">
-                        <div className="flex flex-col h-full">
-                            <div className="border-b border-dashed border-border pb-6 mb-2">
-                                <SheetTitle className="sr-only">Menú de Navegación</SheetTitle>
-                                <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 bg-primary shadow-sm shadow-primary/10 rounded-xl flex items-center justify-center text-primary-foreground font-bold text-lg">
-                                        JS
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <span className="font-bold text-lg text-foreground leading-none tracking-tight">Dr. Javier Stigliano</span>
-                                        <span className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold mt-1">Mastología y Ginecología</span>
+                {/* Mobile Controls */}
+                <div className="flex md:hidden items-center gap-2">
+                    <ModeToggle />
+                    <Sheet>
+                        <SheetTrigger asChild>
+                            <Button variant="ghost" size="icon">
+                                <Menu className="w-6 h-6" />
+                                <span className="sr-only">Menú</span>
+                            </Button>
+                        </SheetTrigger>
+                        <SheetContent side="right" className="w-[300px] sm:w-[350px] border-l-border p-6 pt-14 bg-background">
+                            <div className="flex flex-col h-full">
+                                <div className="border-b border-dashed border-border pb-6 mb-2">
+                                    <SheetTitle className="sr-only">Menú de Navegación</SheetTitle>
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-10 h-10 bg-primary shadow-sm shadow-primary/10 rounded-xl flex items-center justify-center text-primary-foreground font-bold text-lg">
+                                            JS
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <span className="font-bold text-lg text-foreground leading-none tracking-tight">Dr. Javier Stigliano</span>
+                                            <span className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold mt-1">Mastología y Ginecología</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <nav className="flex-1 flex flex-col gap-1">
-                                {navItems.map((item) => {
-                                    const isActive = pathname === item.href
-                                    return (
-                                        <Link
-                                            key={item.href}
-                                            href={item.href}
-                                            className={cn(
-                                                "flex items-center justify-between text-base font-medium px-3 py-3 rounded-lg transition-colors border-l-2",
-                                                isActive
-                                                    ? "text-primary bg-primary/5 border-l-primary font-bold shadow-sm"
-                                                    : "text-muted-foreground hover:text-primary hover:bg-muted border-l-transparent"
-                                            )}
-                                        >
-                                            {item.name}
+                                <nav className="flex-1 flex flex-col gap-1">
+                                    {navItems.map((item) => {
+                                        const isActive = pathname === item.href
+                                        return (
+                                            <Link
+                                                key={item.href}
+                                                href={item.href}
+                                                className={cn(
+                                                    "flex items-center justify-between text-base font-medium px-3 py-3 rounded-lg transition-colors border-l-2",
+                                                    isActive
+                                                        ? "text-primary bg-primary/5 border-l-primary font-bold shadow-sm"
+                                                        : "text-muted-foreground hover:text-primary hover:bg-muted border-l-transparent"
+                                                )}
+                                            >
+                                                {item.name}
+                                            </Link>
+                                        )
+                                    })}
+                                </nav>
+
+                                <div className="mt-auto pt-6 border-t space-y-3">
+                                    <div className="flex items-center justify-between px-1 mb-2">
+                                        <span className="text-sm font-medium text-muted-foreground">Tema</span>
+                                        <ModeToggle />
+                                    </div>
+                                    <Button className="w-full justify-center bg-primary hover:bg-primary/90 text-primary-foreground shadow-md shadow-primary/10" size="lg" asChild>
+                                        <Link href="/contacto#turnos">
+                                            <Calendar className="w-4 h-4 mr-2" />
+                                            Solicitar Turno
                                         </Link>
-                                    )
-                                })}
-                            </nav>
-
-                            <div className="mt-auto pt-6 border-t space-y-3">
-                                <div className="flex items-center justify-between px-1 mb-2">
-                                    <span className="text-sm font-medium text-muted-foreground">Tema</span>
-                                    <ModeToggle />
+                                    </Button>
+                                    <Button variant="outline" className="w-full justify-center border-border text-foreground hover:bg-muted hover:text-primary" size="lg" asChild>
+                                        <Link href="https://wa.me/5491130246736">
+                                            <Phone className="w-4 h-4 mr-2" />
+                                            WhatsApp
+                                        </Link>
+                                    </Button>
                                 </div>
-                                <Button className="w-full justify-center bg-primary hover:bg-primary/90 text-primary-foreground shadow-md shadow-primary/10" size="lg" asChild>
-                                    <Link href="/contacto#turnos">
-                                        <Calendar className="w-4 h-4 mr-2" />
-                                        Solicitar Turno
-                                    </Link>
-                                </Button>
-                                <Button variant="outline" className="w-full justify-center border-border text-foreground hover:bg-muted hover:text-primary" size="lg" asChild>
-                                    <Link href="https://wa.me/5491130246736">
-                                        <Phone className="w-4 h-4 mr-2" />
-                                        WhatsApp
-                                    </Link>
-                                </Button>
                             </div>
-                        </div>
-                    </SheetContent>
-                </Sheet>
+                        </SheetContent>
+                    </Sheet>
+                </div>
             </div>
         </header>
     )

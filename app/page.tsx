@@ -4,7 +4,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { ArrowRight, ShieldCheck, Award, HeartHandshake, Stethoscope, Baby, Clock, MapPin, Calendar } from "lucide-react"
+import { ArrowRight, ShieldCheck, Award, HeartHandshake, Stethoscope, Baby, Clock, MapPin, Calendar, MessageCircle } from "lucide-react"
 
 export default function Home() {
   const fadeIn = {
@@ -226,8 +226,12 @@ export default function Home() {
       </section>
 
       {/* Quick Contact / CTA */}
-      <section className="py-24 bg-foreground py-24 text-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/20 mix-blend-overlay" />
+      <section className="py-24 bg-muted/30 dark:bg-muted/10 text-foreground relative overflow-hidden border-y border-border">
+        {/* Subtle Background pattern */}
+        <div className="absolute inset-0 w-full h-full opacity-[0.05] dark:opacity-[0.02] pointer-events-none"
+          style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '32px 32px' }}>
+        </div>
+
         <div className="container mx-auto px-4 relative z-10 text-center">
           <motion.div
             initial={{ scale: 0.95, opacity: 0 }}
@@ -235,20 +239,25 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Tu salud es prioridad</h2>
-            <p className="text-lg text-background/80 max-w-2xl mx-auto mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Tu salud es prioridad</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
               Reserva tu turno de manera online o consulta por WhatsApp para urgencias. <br />
               Atención en Haedo y Clínica Santa Isabel.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button size="lg" className="bg-background text-foreground hover:bg-muted rounded-full px-8 text-lg font-semibold" asChild>
+              <Button size="lg" className="rounded-full px-8 text-lg font-semibold shadow-lg transition-all hover:scale-105" asChild>
                 <Link href="/contacto#turnos">
                   <Calendar className="mr-2 w-5 h-5" /> Reservar Turno
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-background/30 hover:bg-background/10 text-background rounded-full px-8 text-lg" asChild>
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full px-8 text-lg font-semibold transition-all hover:scale-105 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white dark:border-emerald-500 dark:text-emerald-500 dark:hover:bg-emerald-500 dark:hover:text-background bg-transparent shadow-sm"
+                asChild
+              >
                 <Link href="https://wa.me/5491130246736" target="_blank">
-                  Enviar WhatsApp
+                  <MessageCircle className="mr-2 w-5 h-5" /> Enviar WhatsApp
                 </Link>
               </Button>
             </div>

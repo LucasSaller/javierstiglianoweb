@@ -6,104 +6,139 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { motion } from "framer-motion"
 import { MapPin, Phone, Mail, Clock, Calendar, MessageCircle, AlertCircle } from "lucide-react"
 
 export default function ContactPage() {
+    const fadeIn = {
+        initial: { opacity: 0, y: 20 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true },
+        transition: { duration: 0.6 }
+    };
+
+    const staggerContainer = {
+        initial: {},
+        whileInView: {
+            transition: {
+                staggerChildren: 0.1
+            }
+        },
+        viewport: { once: true }
+    };
+
     return (
         <div className="bg-background min-h-screen">
 
             {/* Header */}
             <section className="relative bg-muted/30 dark:bg-background py-16 md:py-24 text-foreground overflow-hidden">
-                {/* Background Pattern - Modern Dot Grid */}
-                <div className="absolute inset-0 w-full h-full opacity-[0.15] dark:opacity-[0.03]"
-                    style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '24px 24px' }}>
+                {/* Background Patterns & Effects */}
+                <div className="absolute inset-0 w-full h-full opacity-[0.15] dark:opacity-[0.05] pointer-events-none"
+                    style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '32px 32px' }}>
                 </div>
 
-                {/* Spotlight Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-b from-white/50 to-transparent dark:from-primary/10 dark:to-transparent pointer-events-none" />
+                {/* Spotlights */}
+                <div className="absolute top-0 -left-1/4 w-1/2 h-full bg-primary/10 blur-[120px] rounded-full dark:opacity-20 pointer-events-none" />
+                <div className="absolute top-0 -right-1/4 w-1/2 h-full bg-primary/20 skew-x-12 translate-x-10 blur-[120px] rounded-full dark:opacity-30 pointer-events-none" />
+                <div className="absolute -bottom-1/2 left-1/4 w-1/2 h-full bg-primary/10 blur-[120px] rounded-full dark:opacity-20 pointer-events-none" />
 
-                {/* Bottom Fade - Smooth transition to content */}
+                {/* Bottom Fade */}
                 <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
 
-                <div className="container relative mx-auto px-4 text-center z-10">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="container relative mx-auto px-4 text-center z-10"
+                >
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-foreground">Contacto y Turnos</h1>
                     <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                         Estamos para atenderte. Reserva tu turno online de forma rápida o contáctanos por WhatsApp para consultas.
                     </p>
-                </div>
+                </motion.div>
             </section>
 
-            <div className="container mx-auto px-4 py-12 -mt-8">
+            <motion.div
+                initial="initial"
+                whileInView="whileInView"
+                variants={staggerContainer}
+                viewport={{ once: true }}
+                className="container mx-auto px-4 py-12 -mt-8"
+            >
 
                 {/* Quick Actions Cards */}
                 <div className="grid md:grid-cols-2 gap-6 mb-12" id="turnos">
                     {/* DrApp Card */}
-                    <Card className="bg-card hover:shadow-lg transition-all border-l-4 border-l-teal-500 overflow-hidden relative">
-                        <div className="absolute top-0 right-0 bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">Recomendado</div>
-                        <CardContent className="pt-8 pb-8 flex flex-col items-center text-center space-y-4">
-                            <div className="h-16 w-16 bg-teal-50 dark:bg-teal-900/30 rounded-full flex items-center justify-center text-teal-600 dark:text-teal-400 mb-2">
-                                <Calendar className="h-8 w-8" />
-                            </div>
-                            <h2 className="text-2xl font-bold text-foreground">Turnos Online</h2>
-                            <p className="text-muted-foreground max-w-sm">
-                                Gestiona tu turno de manera autónoma las 24hs a través de nuestra plataforma digital.
-                            </p>
-                            <Button size="lg" className="w-full max-w-xs bg-teal-600 hover:bg-teal-700 text-white" asChild>
-                                <a href="https://consultorioginecologiaymastologiastigliano.drapp.com.ar" target="_blank" rel="noopener noreferrer">
-                                    Reservar Turno Ahora
-                                </a>
-                            </Button>
-                            <p className="text-xs text-muted-foreground mt-2">Plataforma segura DrApp</p>
-                        </CardContent>
-                    </Card>
+                    <motion.div variants={fadeIn}>
+                        <Card className="bg-card hover:shadow-lg transition-all border-l-4 border-l-teal-500 overflow-hidden relative group">
+                            <div className="absolute top-0 right-0 bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">Recomendado</div>
+                            <CardContent className="pt-8 pb-8 flex flex-col items-center text-center space-y-4">
+                                <div className="h-16 w-16 bg-teal-50 dark:bg-teal-900/30 rounded-full flex items-center justify-center text-teal-600 dark:text-teal-400 mb-2 transition-transform group-hover:scale-110">
+                                    <Calendar className="h-8 w-8" />
+                                </div>
+                                <h2 className="text-2xl font-bold text-foreground">Turnos Online</h2>
+                                <p className="text-muted-foreground max-w-sm">
+                                    Gestiona tu turno de manera autónoma las 24hs a través de nuestra plataforma digital.
+                                </p>
+                                <Button size="lg" className="w-full max-w-xs bg-teal-600 hover:bg-teal-700 text-white rounded-full" asChild>
+                                    <a href="https://consultorioginecologiaymastologiastigliano.drapp.com.ar" target="_blank" rel="noopener noreferrer">
+                                        Reservar Turno Ahora
+                                    </a>
+                                </Button>
+                                <p className="text-xs text-muted-foreground mt-2">Plataforma segura DrApp</p>
+                            </CardContent>
+                        </Card>
+                    </motion.div>
 
                     {/* WhatsApp Card */}
-                    <Card className="bg-card hover:shadow-lg transition-all border-l-4 border-l-green-500">
-                        <CardContent className="pt-8 pb-8 flex flex-col items-center text-center space-y-4">
-                            <div className="h-16 w-16 bg-green-50 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600 dark:text-green-400 mb-2">
-                                <MessageCircle className="h-8 w-8" />
-                            </div>
-                            <h2 className="text-2xl font-bold text-foreground">WhatsApp</h2>
-                            <p className="text-muted-foreground max-w-sm">
-                                Escribinos para consultas puntuales o urgencias. Te responderemos a la brevedad.
-                            </p>
-                            <Button size="lg" variant="outline" className="w-full max-w-xs border-green-600 text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-950/30" asChild>
-                                <a href="https://wa.me/5491130246736" target="_blank" rel="noopener noreferrer">
-                                    Enviar Mensaje
-                                </a>
-                            </Button>
-                            <p className="text-xs text-muted-foreground mt-2">Respuesta habitual: Lun a Vie 9-18hs</p>
-                        </CardContent>
-                    </Card>
+                    <motion.div variants={fadeIn}>
+                        <Card className="bg-card hover:shadow-lg transition-all border-l-4 border-l-green-500 group">
+                            <CardContent className="pt-8 pb-8 flex flex-col items-center text-center space-y-4">
+                                <div className="h-16 w-16 bg-green-50 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600 dark:text-green-400 mb-2 transition-transform group-hover:scale-110">
+                                    <MessageCircle className="h-8 w-8" />
+                                </div>
+                                <h2 className="text-2xl font-bold text-foreground">WhatsApp</h2>
+                                <p className="text-muted-foreground max-w-sm">
+                                    Escribinos para consultas puntuales o urgencias. Te responderemos a la brevedad.
+                                </p>
+                                <Button size="lg" variant="outline" className="w-full max-w-xs border-green-600 text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-950/30 rounded-full" asChild>
+                                    <a href="https://wa.me/5491130246736" target="_blank" rel="noopener noreferrer">
+                                        Enviar Mensaje
+                                    </a>
+                                </Button>
+                                <p className="text-xs text-muted-foreground mt-2">Respuesta habitual: Lun a Vie 9-18hs</p>
+                            </CardContent>
+                        </Card>
+                    </motion.div>
                 </div>
 
                 <div className="grid lg:grid-cols-3 gap-12">
 
                     {/* Contact Form */}
-                    <div className="lg:col-span-2 space-y-8">
+                    <motion.div variants={fadeIn} className="lg:col-span-2 space-y-8">
                         <div className="bg-card p-6 md:p-8 rounded-2xl shadow-sm border border-border">
                             <h3 className="text-2xl font-semibold mb-6 text-foreground">Envíanos un mensaje</h3>
                             <form className="space-y-4">
                                 <div className="grid md:grid-cols-2 gap-4">
                                     <div className="space-y-2">
                                         <Label htmlFor="name">Nombre y Apellido</Label>
-                                        <Input id="name" placeholder="Tu nombre" />
+                                        <Input id="name" placeholder="Tu nombre" className="rounded-lg" />
                                     </div>
                                     <div className="space-y-2">
                                         <Label htmlFor="phone">Teléfono</Label>
-                                        <Input id="phone" placeholder="Ej: 11 1234 5678" />
+                                        <Input id="phone" placeholder="Ej: 11 1234 5678" className="rounded-lg" />
                                     </div>
                                 </div>
 
                                 <div className="space-y-2">
                                     <Label htmlFor="email">Email</Label>
-                                    <Input id="email" type="email" placeholder="tu@email.com" />
+                                    <Input id="email" type="email" placeholder="tu@email.com" className="rounded-lg" />
                                 </div>
 
                                 <div className="space-y-2">
                                     <Label htmlFor="subject">Motivo de consulta</Label>
                                     <Select>
-                                        <SelectTrigger>
+                                        <SelectTrigger className="rounded-lg">
                                             <SelectValue placeholder="Selecciona un motivo" />
                                         </SelectTrigger>
                                         <SelectContent>
@@ -117,29 +152,29 @@ export default function ContactPage() {
 
                                 <div className="space-y-2">
                                     <Label htmlFor="message">Mensaje</Label>
-                                    <Textarea id="message" placeholder="¿En qué podemos ayudarte?" className="min-h-[120px]" />
+                                    <Textarea id="message" placeholder="¿En qué podemos ayudarte?" className="min-h-[120px] rounded-lg" />
                                 </div>
 
-                                <Button type="submit" className="w-full md:w-auto px-8">
+                                <Button type="submit" className="w-full md:w-auto px-8 rounded-full">
                                     Enviar Mensaje
                                 </Button>
                             </form>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Locations Info */}
-                    <div className="space-y-6">
+                    <motion.div variants={fadeIn} className="space-y-6">
                         <h3 className="text-xl font-semibold text-foreground">Nuestros Consultorios</h3>
 
                         {/* Location 1 */}
-                        <Card>
+                        <Card className="hover:shadow-md transition-shadow">
                             <CardContent className="p-6 space-y-4">
                                 <div className="flex items-start gap-3">
                                     <MapPin className="w-5 h-5 text-primary shrink-0 mt-1" />
                                     <div>
                                         <h4 className="font-bold text-foreground">Consultorio Haedo</h4>
-                                        <p className="text-sm text-muted-foreground">Remedios de Escalada de San Martín 47, 1º piso Dto D</p>
-                                        <p className="text-sm text-muted-foreground/80 mt-1">Haedo, Provincia de Buenos Aires</p>
+                                        <p className="text-sm text-muted-foreground text-left">Remedios de Escalada de San Martín 47, 1º piso Dto D</p>
+                                        <p className="text-sm text-muted-foreground/80 mt-1 text-left">Haedo, Provincia de Buenos Aires</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-3">
@@ -154,14 +189,14 @@ export default function ContactPage() {
                         </Card>
 
                         {/* Location 2 */}
-                        <Card>
+                        <Card className="hover:shadow-md transition-shadow">
                             <CardContent className="p-6 space-y-4">
                                 <div className="flex items-start gap-3">
                                     <MapPin className="w-5 h-5 text-primary shrink-0 mt-1" />
                                     <div>
                                         <h4 className="font-bold text-foreground">Clínica Santa Isabel</h4>
-                                        <p className="text-sm text-muted-foreground">Atención Externa</p>
-                                        <p className="text-sm text-muted-foreground/80 mt-1">CABA</p>
+                                        <p className="text-sm text-muted-foreground text-left">Atención Externa</p>
+                                        <p className="text-sm text-muted-foreground/80 mt-1 text-left">CABA</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-3">
@@ -175,17 +210,15 @@ export default function ContactPage() {
                             </CardContent>
                         </Card>
 
-                        <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900 rounded-lg p-4 flex gap-3">
+                        <div className="bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-900/30 rounded-xl p-4 flex gap-3">
                             <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-500 shrink-0" />
-                            <p className="text-sm text-amber-800 dark:text-amber-300">
+                            <p className="text-sm text-amber-800 dark:text-amber-200 text-left">
                                 <strong>Importante:</strong> Si decide asistir sin turno previo, por favor confirme telefónicamente que el Dr. se encuentre atendiendo.
                             </p>
                         </div>
-
-                    </div>
-
+                    </motion.div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     )
 }
