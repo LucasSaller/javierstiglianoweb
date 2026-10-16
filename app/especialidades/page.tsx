@@ -76,7 +76,7 @@ export default function SpecialtiesPage() {
                             <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
                                 <Ribbon className="w-6 h-6" />
                             </div>
-                            <h2 className="text-3xl font-bold text-foreground">Mastología (Patología Mamaria)</h2>
+                            <h2 className="text-3xl font-bold text-foreground">Patología Mamaria (Mastología)</h2>
                         </div>
                         <div className="prose prose-slate dark:prose-invert max-w-none mb-6">
                             <p className="text-muted-foreground">

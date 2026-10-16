@@ -12,7 +12,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Dr. Javier Stigliano | Mastología y Ginecología",
-  description: "Especialista en Mastología (Patología Mamaria), Ginecología y Medicina Legal. Atención experta y humanizada en Haedo y CABA. Turnos online disponibles.",
+  description: "Especialista en Patología Mamaria (Mastología), Ginecología y Medicina Legal. Atención experta y humanizada en Haedo y CABA. Turnos online disponibles.",
   keywords: ["Mastólogo", "Ginecólogo", "Patología Mamaria", "Haedo", "Dr. Stigliano", "Salud Mujer", "Hospital Posadas"],
   openGraph: {
     title: "Dr. Javier Stigliano | Mastología y Ginecología",
