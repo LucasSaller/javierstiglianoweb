@@ -6,6 +6,8 @@ import { Menu, Phone, Calendar } from "lucide-react"
 import { usePathname } from "next/navigation"
 
 import { Button } from "@/components/ui/button"
+import { linkWhatsapp } from "@/lib/estilos-contenido"
+import datosSitio from "@/content/sitio/datos.json"
 import { ModeToggle } from "@/components/mode-toggle"
 import {
     Sheet,
@@ -49,8 +51,8 @@ export function Header() {
                         <span className="font-bold text-xl">JS</span>
                     </div>
                     <div className="flex flex-col">
-                        <span className="font-bold text-lg leading-none text-primary">Dr. Javier Stigliano</span>
-                        <span className="text-xs text-muted-foreground uppercase tracking-wider">Mastología y Ginecología</span>
+                        <span className="font-bold text-lg leading-none text-primary">{datosSitio.nombre}</span>
+                        <span className="text-xs text-muted-foreground uppercase tracking-wider">{datosSitio.especialidadCorta}</span>
                     </div>
                 </Link>
 
@@ -80,7 +82,7 @@ export function Header() {
                 <div className="hidden lg:flex items-center gap-3">
                     <ModeToggle />
                     <Button variant="outline" size="sm" asChild className="hidden xl:flex">
-                        <Link href="https://wa.me/5491130246736" target="_blank">
+                        <Link href={linkWhatsapp(datosSitio.whatsapp)} target="_blank">
                             <Phone className="w-4 h-4 mr-2" />
                             WhatsApp
                         </Link>
@@ -112,8 +114,8 @@ export function Header() {
                                             JS
                                         </div>
                                         <div className="flex flex-col">
-                                            <span className="font-bold text-lg text-foreground leading-none tracking-tight">Dr. Javier Stigliano</span>
-                                            <span className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold mt-1">Mastología y Ginecología</span>
+                                            <span className="font-bold text-lg text-foreground leading-none tracking-tight">{datosSitio.nombre}</span>
+                                            <span className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold mt-1">{datosSitio.especialidadCorta}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -150,7 +152,7 @@ export function Header() {
                                         </Link>
                                     </Button>
                                     <Button variant="outline" className="w-full justify-center border-border text-foreground hover:bg-muted hover:text-primary" size="lg" asChild>
-                                        <Link href="https://wa.me/5491130246736">
+                                        <Link href={linkWhatsapp(datosSitio.whatsapp)}>
                                             <Phone className="w-4 h-4 mr-2" />
                                             WhatsApp
                                         </Link>

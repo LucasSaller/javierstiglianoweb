@@ -22,6 +22,14 @@ jobs:
         run: |
           versiones=$(node -e "for (const n of ['tinacms','@tinacms/cli','next','react']) { try { console.log(n+'@'+require(require.resolve(n+'/package.json',{paths:[process.cwd()]})).version) } catch(e) { console.log(n+': ?') } }" | tr '\n' ' ')
           echo "::notice title=versiones::$versiones"
+      - name: Revisar tipos (todos los errores juntos)
+        shell: bash
+        run: |
+          npx tinacms build --local --skip-indexing --skip-cloud-checks > /dev/null 2>&1 || true
+          npx tsc --noEmit --pretty false > tsc.log 2>&1 && echo "::notice title=tipos::sin errores" || {
+            resumen=$(head -80 tsc.log | sed -e 's/%/%25/g' | awk '{printf "%s%%0A", $0}')
+            echo "::error title=tipos::$resumen"
+          }
       - name: Compilar
         shell: bash
         run: |
