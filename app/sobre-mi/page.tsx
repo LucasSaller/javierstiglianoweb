@@ -135,7 +135,7 @@ export default function AboutPage() {
                                         { title: "Especialista Universitaria en Ginecología", org: "Universidad de Buenos Aires (UBA)" },
                                         { title: "Especialista en Mastología", org: "Sociedad Argentina de Mastología (SAMAS)" },
                                         { title: "Médico Legista", org: "Universidad Católica Argentina (UCA)" },
-                                        { title: "Magíster en Educación para Profesionales de la Salud", org: "Instituto Universitario Hospital Italiano" },
+                                        { title: "Magíster en Educación para Profesionales de la Salud", org: "Universidad Hospital Italiano" },
                                         { title: "Magíster en Mastología", org: "" },
                                     ].map((edu, i) => (
                                         <li key={i} className="flex gap-4 items-start">
