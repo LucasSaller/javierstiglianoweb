@@ -45,6 +45,12 @@ jobs:
         env:
           NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+      - name: Probar páginas
+        shell: bash
+        run: |
+          bash scripts/probar-paginas.sh > pruebas.log 2>&1 || true
+          resumen=$(sed -e 's/%/%25/g' pruebas.log | awk '{printf "%s%%0A", $0}')
+          if grep -q "FALLAS=0" pruebas.log; then echo "::notice title=pruebas::$resumen"; else echo "::error title=pruebas::$resumen"; exit 1; fi
       - name: Subir tina-lock.json actualizado
         if: success()
         shell: bash
