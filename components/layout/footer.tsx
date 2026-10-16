@@ -79,10 +79,6 @@ export function Footer() {
 
                 <div className="border-t border-border pt-8 text-center text-xs text-muted-foreground">
                     <p>&copy; {new Date().getFullYear()} Dr. Javier Stigliano. Todos los derechos reservados.</p>
-                    <div className="mt-2 space-x-4">
-                        <Link href="/legales" className="hover:underline">Aviso Legal</Link>
-                        <Link href="/privacidad" className="hover:underline">Política de Privacidad</Link>
-                    </div>
                     <p className="mt-4 text-[10px] text-muted-foreground/60">
                         La información en este sitio es educativa y no reemplaza la consulta profesional. Ante una emergencia, acuda a la guardia más cercana.
                     </p>

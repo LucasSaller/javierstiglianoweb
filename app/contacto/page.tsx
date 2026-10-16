@@ -8,8 +8,43 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { motion } from "framer-motion"
 import { MapPin, Phone, Mail, Clock, Calendar, MessageCircle, AlertCircle } from "lucide-react"
+import { useState, type FormEvent } from "react"
+
+const WHATSAPP_NUMERO: string = "5491130246736"
+
+const MOTIVOS_CONSULTA: Record<string, string> = {
+    turno: "Consulta por turnos",
+    mastologia: "Consulta de mastología",
+    ginecologia: "Consulta de ginecología",
+    otro: "Otro",
+}
 
 export default function ContactPage() {
+    const [nombreCompleto, setNombreCompleto] = useState<string>("")
+    const [telefono, setTelefono] = useState<string>("")
+    const [email, setEmail] = useState<string>("")
+    const [motivoConsulta, setMotivoConsulta] = useState<string>("")
+    const [mensaje, setMensaje] = useState<string>("")
+    const [errorFormulario, setErrorFormulario] = useState<string>("")
+
+    const enviarPorWhatsapp = (evento: FormEvent<HTMLFormElement>): void => {
+        evento.preventDefault()
+        if (!nombreCompleto.trim() || !mensaje.trim()) {
+            setErrorFormulario("Completá tu nombre y el mensaje para poder enviarlo.")
+            return
+        }
+        setErrorFormulario("")
+        const lineasEncabezado: string[] = [
+            `Hola Dr. Stigliano, soy ${nombreCompleto.trim()}.`,
+            motivoConsulta ? `Motivo: ${MOTIVOS_CONSULTA[motivoConsulta]}` : "",
+            telefono.trim() ? `Teléfono: ${telefono.trim()}` : "",
+            email.trim() ? `Email: ${email.trim()}` : "",
+        ].filter((linea: string) => linea !== "")
+        const textoCompleto: string = `${lineasEncabezado.join("\n")}\n\n${mensaje.trim()}`
+        const urlWhatsapp: string = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(textoCompleto)}`
+        window.open(urlWhatsapp, "_blank", "noopener,noreferrer")
+    }
+
     const fadeIn = {
         initial: { opacity: 0, y: 20 },
         whileInView: { opacity: 1, y: 0 },
@@ -118,26 +153,26 @@ export default function ContactPage() {
                     <motion.div variants={fadeIn} className="lg:col-span-2 space-y-8">
                         <div className="bg-card p-6 md:p-8 rounded-2xl shadow-sm border border-border">
                             <h3 className="text-2xl font-semibold mb-6 text-foreground">Envíanos un mensaje</h3>
-                            <form className="space-y-4">
+                            <form className="space-y-4" onSubmit={enviarPorWhatsapp} noValidate>
                                 <div className="grid md:grid-cols-2 gap-4">
                                     <div className="space-y-2">
                                         <Label htmlFor="name">Nombre y Apellido</Label>
-                                        <Input id="name" placeholder="Tu nombre" className="rounded-lg" />
+                                        <Input id="name" placeholder="Tu nombre" className="rounded-lg" value={nombreCompleto} onChange={(e) => { setNombreCompleto(e.target.value); setErrorFormulario("") }} />
                                     </div>
                                     <div className="space-y-2">
                                         <Label htmlFor="phone">Teléfono</Label>
-                                        <Input id="phone" placeholder="Ej: 11 1234 5678" className="rounded-lg" />
+                                        <Input id="phone" type="tel" placeholder="Ej: 11 1234 5678" className="rounded-lg" value={telefono} onChange={(e) => setTelefono(e.target.value)} />
                                     </div>
                                 </div>
 
                                 <div className="space-y-2">
                                     <Label htmlFor="email">Email</Label>
-                                    <Input id="email" type="email" placeholder="tu@email.com" className="rounded-lg" />
+                                    <Input id="email" type="email" placeholder="tu@email.com" className="rounded-lg" value={email} onChange={(e) => setEmail(e.target.value)} />
                                 </div>
 
                                 <div className="space-y-2">
                                     <Label htmlFor="subject">Motivo de consulta</Label>
-                                    <Select>
+                                    <Select value={motivoConsulta} onValueChange={setMotivoConsulta}>
                                         <SelectTrigger className="rounded-lg">
                                             <SelectValue placeholder="Selecciona un motivo" />
                                         </SelectTrigger>
@@ -152,12 +187,14 @@ export default function ContactPage() {
 
                                 <div className="space-y-2">
                                     <Label htmlFor="message">Mensaje</Label>
-                                    <Textarea id="message" placeholder="¿En qué podemos ayudarte?" className="min-h-[120px] rounded-lg" />
+                                    <Textarea id="message" placeholder="¿En qué podemos ayudarte?" className="min-h-[120px] rounded-lg" value={mensaje} onChange={(e) => { setMensaje(e.target.value); setErrorFormulario("") }} />
+                                    {errorFormulario && <p className="text-sm text-destructive">{errorFormulario}</p>}
                                 </div>
 
                                 <Button type="submit" className="w-full md:w-auto px-8 rounded-full">
-                                    Enviar Mensaje
+                                    <MessageCircle className="w-4 h-4 mr-2" /> Enviar por WhatsApp
                                 </Button>
+                                <p className="text-xs text-muted-foreground">Se abre WhatsApp con tu mensaje listo para enviar.</p>
                             </form>
                         </div>
                     </motion.div>
