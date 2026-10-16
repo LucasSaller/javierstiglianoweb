@@ -5,6 +5,9 @@ on:
     branches: [cambios-contenido, main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -42,6 +45,20 @@ jobs:
         env:
           NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+      - name: Subir tina-lock.json actualizado
+        if: success()
+        shell: bash
+        run: |
+          if [ -n "$(git status --porcelain tina/tina-lock.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add tina/tina-lock.json
+            git commit -m "Actualizar tina-lock.json [skip ci]"
+            git push
+            echo "::notice title=tina-lock::actualizado"
+          else
+            echo "::notice title=tina-lock::sin cambios"
+          fi
       - name: Guardar package-lock actualizado
         if: always()
         uses: actions/upload-artifact@v4
