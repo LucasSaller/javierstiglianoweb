@@ -12,6 +12,7 @@ revisar / "Ginecología y Medicina Legal"
 revisar / "Diagnóstico preciso, tratamiento oportuno"
 revisar / "Indicación de punciones y biopsias."
 revisar / "Trayectoria y Compromiso"
+codigo_foto=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3123/imagenes/dr-stigliano.jpg); if [ "$codigo_foto" = "200" ]; then echo "OK   foto (200)"; else echo "FALTA foto ($codigo_foto)"; fallas=$((fallas+1)); fi
 revisar /especialidades "Patología Mamaria (Mastología)"
 revisar /especialidades "Screening de los cánceres más frecuentes."
 revisar /especialidades "tomosíntesis"

@@ -7,6 +7,7 @@ import { ArrowRight, Calendar, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { IconoContenido } from "@/components/icono-contenido"
+import { FotoContenido } from "@/components/foto-contenido"
 import { estiloDeColor, linkWhatsapp } from "@/lib/estilos-contenido"
 import type { ContenidoTina } from "@/lib/contenido"
 import type { InicioQuery } from "@/tina/__generated__/types"
@@ -179,8 +180,7 @@ export function InicioVista(props: ContenidoTina<InicioQuery>) {
             <motion.div variants={fadeIn} className="md:w-1/2 relative group">
               <div className="absolute -inset-4 bg-primary/10 rounded-[2rem] blur-2xl group-hover:bg-primary/20 transition-colors duration-500" />
               <div data-tina-field={tinaField(trayectoria, "foto")} className="aspect-square rounded-2xl bg-muted overflow-hidden relative shadow-2xl skew-y-3 transition-transform duration-500 group-hover:skew-y-0 group-hover:scale-[1.02]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={trayectoria?.foto || "/dr-stigliano.jpg"} alt={datosSitio.nombre} className="w-full h-full object-cover" />
+                <FotoContenido src={trayectoria?.foto} alt={datosSitio.nombre} className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl -z-10" />
             </motion.div>

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { EncabezadoPagina } from "@/components/paginas/encabezado-pagina"
 import { TextoEnriquecido } from "@/components/texto-enriquecido"
+import { FotoContenido } from "@/components/foto-contenido"
 import { estiloDeColor } from "@/lib/estilos-contenido"
 import type { ContenidoTina } from "@/lib/contenido"
 import type { SobreMiQuery } from "@/tina/__generated__/types"
@@ -45,9 +46,8 @@ export function SobreMiVista(props: ContenidoTina<SobreMiQuery>) {
                         {/* Foto */}
                         <motion.div variants={fadeIn} className="w-full md:w-1/3 sticky top-24">
                             <div data-tina-field={tinaField(pagina, "foto")} className="aspect-[3/4] bg-muted rounded-2xl overflow-hidden relative shadow-lg group">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                    src={pagina.foto || "/dr-stigliano.jpg"}
+                                <FotoContenido
+                                    src={pagina.foto}
                                     alt="Dr. Javier Stigliano"
                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                 />
