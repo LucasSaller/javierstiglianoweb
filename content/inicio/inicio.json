@@ -6,7 +6,7 @@
     "tituloDespues": "Ginecología y Medicina Legal",
     "subtitulo": "Dr. Javier Stigliano. Diagnóstico preciso, tratamiento oportuno y acompañamiento integral.",
     "botonPrincipal": "Solicitar Turno Online",
-    "botonSecundario": "Conocer al Doctor"
+    "botonSecundario": "Conocer "
   },
   "credenciales": [
     {
@@ -58,7 +58,7 @@
     ]
   },
   "trayectoria": {
-    "foto": "/dr-stigliano.jpg",
+    "foto": "/imagenes/dr-stigliano.jpg",
     "titulo": "Trayectoria y Compromiso",
     "parrafoDestacado": "Como Jefe de Patología Mamaria del Hospital Nacional Posadas y docente de la UBA, combino la experiencia académica de alto nivel con una atención cálida y personalizada en el consultorio.",
     "parrafo": "Entiendo que la salud mamaria genera ansiedades y dudas. Mi objetivo es brindarte claridad, un diagnóstico preciso y el mejor camino terapéutico, acompañándote en cada paso.",
