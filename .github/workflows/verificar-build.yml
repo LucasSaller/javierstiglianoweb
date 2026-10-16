@@ -18,8 +18,19 @@ jobs:
       - name: Lint
         run: npm run lint
         continue-on-error: true
+      - name: Versiones instaladas
+        run: |
+          versiones=$(node -e "for (const n of ['tinacms','@tinacms/cli','next','react']) { try { console.log(n+'@'+require(require.resolve(n+'/package.json',{paths:[process.cwd()]})).version) } catch(e) { console.log(n+': ?') } }" | tr '\n' ' ')
+          echo "::notice title=versiones::$versiones"
       - name: Compilar
-        run: npm run build
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run build 2>&1 | tee build.log || {
+            resumen=$(grep -v "^\s*$" build.log | tail -60 | sed -e 's/%/%25/g' | awk '{printf "%s%%0A", $0}')
+            echo "::error title=build::$resumen"
+            exit 1
+          }
         env:
           NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
