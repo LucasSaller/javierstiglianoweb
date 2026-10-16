@@ -1,5 +1,19 @@
 import Link from "next/link"
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Instagram } from "lucide-react"
+
+type ConsultorioFooter = {
+    nombre: string
+    direccion: string
+    horario: string
+    telefono: string
+    telefonoLink: string
+}
+
+const CONSULTORIOS_FOOTER: ConsultorioFooter[] = [
+    { nombre: "Consultorio Haedo", direccion: "Remedios de Escalada de San Martín 47, 1º D, Haedo", horario: "Jueves: 14:00 - 18:00 hs", telefono: "2081-6169", telefonoLink: "tel:+541120816169" },
+    { nombre: "Consultorio CABA", direccion: "Rosario 130, 1º piso, Dto. 4", horario: "Miércoles: 15:00 - 17:00 hs", telefono: "11 7544-5430", telefonoLink: "tel:+541175445430" },
+    { nombre: "Clínica Santa Isabel", direccion: "", horario: "Lunes: 16:00 - 20:00 hs", telefono: "", telefonoLink: "" },
+]
 
 export function Footer() {
     return (
@@ -14,14 +28,12 @@ export function Footer() {
                             <span className="font-bold text-lg text-primary">Dr. Javier Stigliano</span>
                         </div>
                         <p className="text-muted-foreground text-sm leading-relaxed">
-                            Especialista en Mastología, Ginecología y Obstetricia. Atención humanizada con evidencia científica y sólida trayectoria hospitalaria.
+                            Especialista en Mastología, Ginecología y Medicina Legal. Atención personalizada con evidencia científica y sólida trayectoria hospitalaria.
                         </p>
                         <div className="flex gap-4 pt-2">
-                            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                                <Linkedin className="w-5 h-5" />
-                                <span className="sr-only">LinkedIn</span>
-                            </Link>
-                            {/* Add more social if confirmed */}
+                            <a href="https://www.instagram.com/doctorstigliano" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                                <Instagram className="w-5 h-5" /> @doctorstigliano
+                            </a>
                         </div>
                     </div>
 
@@ -40,37 +52,25 @@ export function Footer() {
                     {/* Contact Column */}
                     <div className="md:col-span-2">
                         <h3 className="font-semibold text-primary mb-4">Información de Contacto</h3>
-                        <div className="grid sm:grid-cols-2 gap-4">
-                            <div className="space-y-3 text-sm">
-                                <div className="flex items-start gap-3">
+                        <div className="grid sm:grid-cols-2 gap-4 text-sm">
+                            {CONSULTORIOS_FOOTER.map((consultorio: ConsultorioFooter) => (
+                                <div key={consultorio.nombre} className="flex items-start gap-3">
                                     <MapPin className="w-5 h-5 text-secondary-foreground shrink-0 mt-0.5" />
                                     <div>
-                                        <strong className="block text-primary">Consultorio Haedo</strong>
-                                        <span className="text-muted-foreground block">Remedios de Escalada de San Martín 47, 1º D</span>
-                                        <span className="text-muted-foreground block">Haedo, Buenos Aires</span>
+                                        <strong className="block text-primary">{consultorio.nombre}</strong>
+                                        {consultorio.direccion && <span className="text-muted-foreground block">{consultorio.direccion}</span>}
+                                        <span className="text-muted-foreground flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> {consultorio.horario}</span>
+                                        {consultorio.telefono && (
+                                            <a href={consultorio.telefonoLink} className="text-muted-foreground hover:text-primary flex items-center gap-1">
+                                                <Phone className="w-3.5 h-3.5" /> {consultorio.telefono}
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-3">
-                                    <Phone className="w-5 h-5 text-secondary-foreground shrink-0" />
-                                    <a href="tel:+541120816169" className="text-muted-foreground hover:text-primary">2081-6169</a>
-                                </div>
-                            </div>
-
-                            <div className="space-y-3 text-sm">
-                                <div className="flex items-start gap-3">
-                                    <Clock className="w-5 h-5 text-secondary-foreground shrink-0 mt-0.5" />
-                                    <div>
-                                        <strong className="block text-primary">Horarios de Atención</strong>
-                                        <span className="text-muted-foreground block">Jueves: 14:00 - 18:00 hs</span>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-3">
-                                    <MapPin className="w-5 h-5 text-secondary-foreground shrink-0 mt-0.5" />
-                                    <div>
-                                        <strong className="block text-primary">Clínica Santa Isabel</strong>
-                                        <span className="text-muted-foreground block">Lunes: 16:00 - 20:00 hs</span>
-                                    </div>
-                                </div>
+                            ))}
+                            <div className="flex items-start gap-3">
+                                <Mail className="w-5 h-5 text-secondary-foreground shrink-0 mt-0.5" />
+                                <a href="mailto:consultoriostigliano@gmail.com" className="text-muted-foreground hover:text-primary break-all">consultoriostigliano@gmail.com</a>
                             </div>
                         </div>
                     </div>

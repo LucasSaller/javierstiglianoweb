@@ -4,7 +4,8 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { ArrowRight, ShieldCheck, Award, HeartHandshake, Stethoscope, Baby, Clock, MapPin, Calendar, MessageCircle } from "lucide-react"
+import { UteroIcon } from "@/components/icons/utero"
+import { ArrowRight, ShieldCheck, Award, HeartHandshake, Ribbon, Clock, MapPin, Calendar, MessageCircle } from "lucide-react"
 
 export default function Home() {
   const fadeIn = {
@@ -51,11 +52,11 @@ export default function Home() {
               Atención en Haedo y CABA
             </div>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-tight">
-              Especialista en <span className="text-primary">Mastología</span> <br className="hidden md:block" />
-              y Salud de la Mujer
+              Especialista en <span className="text-primary">Mastología</span>, <br className="hidden md:block" />
+              Ginecología y Medicina Legal
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              Dr. Javier Stigliano. Diagnóstico preciso, tratamiento humano y acompañamiento integral. Jefe de Patología Mamaria del Hospital Posadas.
+              Dr. Javier Stigliano. Diagnóstico preciso, tratamiento oportuno y acompañamiento integral.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 h-12 text-base" asChild>
@@ -142,7 +143,7 @@ export default function Home() {
               <Card className="hover:shadow-lg transition-shadow border-t-4 border-t-primary bg-card text-card-foreground">
                 <CardHeader>
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
-                    <Stethoscope className="w-6 h-6" />
+                    <Ribbon className="w-6 h-6" />
                   </div>
                   <CardTitle className="text-xl">Mastología</CardTitle>
                   <CardDescription>Especialidad principal</CardDescription>
@@ -150,7 +151,7 @@ export default function Home() {
                 <CardContent>
                   <ul className="space-y-2 mb-6 text-muted-foreground text-sm">
                     <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary" /> Diagnóstico de nódulos y patologías.</li>
-                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary" /> Punciones y biopsias mamarias.</li>
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary" /> Indicación de punciones y biopsias.</li>
                     <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary" /> Cirugía mamaria y reconstrucción.</li>
                     <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary" /> Asesoramiento genético.</li>
                   </ul>
@@ -165,17 +166,17 @@ export default function Home() {
               <Card className="hover:shadow-lg transition-shadow border-t-4 border-t-chart-2 bg-card text-card-foreground">
                 <CardHeader>
                   <div className="w-12 h-12 bg-chart-2/10 rounded-lg flex items-center justify-center text-chart-2 mb-4">
-                    <Baby className="w-6 h-6" />
+                    <UteroIcon className="w-6 h-6" />
                   </div>
                   <CardTitle className="text-xl">Ginecología Integral</CardTitle>
                   <CardDescription>Controles y Salud Femenina</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 mb-6 text-muted-foreground text-sm">
-                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-chart-2" /> Control anual ginecológico (PAP/Colpo).</li>
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-chart-2" /> Control ginecológico (PAP, HPV, colposcopía).</li>
                     <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-chart-2" /> Anticoncepción y planificación.</li>
                     <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-chart-2" /> Menopausia y climaterio.</li>
-                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-chart-2" /> Salud reproductiva.</li>
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-chart-2" /> Ginecología oncológica.</li>
                   </ul>
                   <Button variant="link" className="p-0 h-auto text-chart-2 font-semibold" asChild>
                     <Link href="/especialidades#ginecologia">Saber más <ArrowRight className="w-4 h-4 ml-1" /></Link>
@@ -241,8 +242,8 @@ export default function Home() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Tu salud es prioridad</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              Reserva tu turno de manera online o consulta por WhatsApp para urgencias. <br />
-              Atención en Haedo y Clínica Santa Isabel.
+              Reservá tu turno de manera online o consultá por WhatsApp. <br />
+              Atención en Haedo, CABA y Clínica Santa Isabel.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button size="lg" className="rounded-full px-8 text-lg font-semibold shadow-lg transition-all hover:scale-105" asChild>

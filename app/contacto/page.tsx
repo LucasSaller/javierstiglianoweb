@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { motion } from "framer-motion"
-import { MapPin, Phone, Mail, Clock, Calendar, MessageCircle, AlertCircle } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Calendar, MessageCircle, AlertCircle, Instagram } from "lucide-react"
 import { useState, type FormEvent } from "react"
 
 const WHATSAPP_NUMERO: string = "5491130246736"
@@ -88,7 +88,7 @@ export default function ContactPage() {
                 >
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-foreground">Contacto y Turnos</h1>
                     <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                        Estamos para atenderte. Reserva tu turno online de forma rápida o contáctanos por WhatsApp para consultas.
+                        Estamos para atenderte. Reservá tu turno online de forma rápida o escribinos por WhatsApp para consultas.
                     </p>
                 </motion.div>
             </section>
@@ -113,7 +113,7 @@ export default function ContactPage() {
                                 </div>
                                 <h2 className="text-2xl font-bold text-foreground">Turnos Online</h2>
                                 <p className="text-muted-foreground max-w-sm">
-                                    Gestiona tu turno de manera autónoma las 24hs a través de nuestra plataforma digital.
+                                    Gestioná tu turno de manera autónoma las 24hs a través de nuestra plataforma digital.
                                 </p>
                                 <Button size="lg" className="w-full max-w-xs bg-teal-600 hover:bg-teal-700 text-white rounded-full" asChild>
                                     <a href="https://consultorioginecologiaymastologiastigliano.drapp.com.ar" target="_blank" rel="noopener noreferrer">
@@ -152,7 +152,7 @@ export default function ContactPage() {
                     {/* Contact Form */}
                     <motion.div variants={fadeIn} className="lg:col-span-2 space-y-8">
                         <div className="bg-card p-6 md:p-8 rounded-2xl shadow-sm border border-border">
-                            <h3 className="text-2xl font-semibold mb-6 text-foreground">Envíanos un mensaje</h3>
+                            <h3 className="text-2xl font-semibold mb-6 text-foreground">Envianos un mensaje</h3>
                             <form className="space-y-4" onSubmit={enviarPorWhatsapp} noValidate>
                                 <div className="grid md:grid-cols-2 gap-4">
                                     <div className="space-y-2">
@@ -174,7 +174,7 @@ export default function ContactPage() {
                                     <Label htmlFor="subject">Motivo de consulta</Label>
                                     <Select value={motivoConsulta} onValueChange={setMotivoConsulta}>
                                         <SelectTrigger className="rounded-lg">
-                                            <SelectValue placeholder="Selecciona un motivo" />
+                                            <SelectValue placeholder="Seleccioná un motivo" />
                                         </SelectTrigger>
                                         <SelectContent>
                                             <SelectItem value="turno">Consulta por Turnos</SelectItem>
@@ -225,6 +225,28 @@ export default function ContactPage() {
                             </CardContent>
                         </Card>
 
+                        {/* Consultorio Rosario (CABA) */}
+                        <Card className="hover:shadow-md transition-shadow">
+                            <CardContent className="p-6 space-y-4">
+                                <div className="flex items-start gap-3">
+                                    <MapPin className="w-5 h-5 text-primary shrink-0 mt-1" />
+                                    <div>
+                                        <h4 className="font-bold text-foreground">Consultorio CABA</h4>
+                                        <p className="text-sm text-muted-foreground text-left">Rosario 130, 1º piso, Dto. 4</p>
+                                        <p className="text-sm text-muted-foreground/80 mt-1 text-left">Ciudad Autónoma de Buenos Aires</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <Clock className="w-5 h-5 text-primary shrink-0" />
+                                    <p className="text-sm text-muted-foreground">Miércoles: 15:00 - 17:00 hs</p>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <Phone className="w-5 h-5 text-primary shrink-0" />
+                                    <a href="tel:+541175445430" className="text-sm text-muted-foreground hover:text-primary">11 7544-5430</a>
+                                </div>
+                            </CardContent>
+                        </Card>
+
                         {/* Location 2 */}
                         <Card className="hover:shadow-md transition-shadow">
                             <CardContent className="p-6 space-y-4">
@@ -247,10 +269,19 @@ export default function ContactPage() {
                             </CardContent>
                         </Card>
 
+                        <div className="flex flex-col gap-3 rounded-xl border border-border bg-card p-4 text-sm">
+                            <a href="mailto:consultoriostigliano@gmail.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary">
+                                <Mail className="w-5 h-5 text-primary shrink-0" /> consultoriostigliano@gmail.com
+                            </a>
+                            <a href="https://www.instagram.com/doctorstigliano" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-muted-foreground hover:text-primary">
+                                <Instagram className="w-5 h-5 text-primary shrink-0" /> Seguinos en Instagram para ver novedades: @doctorstigliano
+                            </a>
+                        </div>
+
                         <div className="bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-900/30 rounded-xl p-4 flex gap-3">
                             <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-500 shrink-0" />
                             <p className="text-sm text-amber-800 dark:text-amber-200 text-left">
-                                <strong>Importante:</strong> Si decide asistir sin turno previo, por favor confirme telefónicamente que el Dr. se encuentre atendiendo.
+                                <strong>Importante:</strong> Si decidís asistir sin turno previo, confirmá telefónicamente que el doctor se encuentre atendiendo.
                             </p>
                         </div>
                     </motion.div>

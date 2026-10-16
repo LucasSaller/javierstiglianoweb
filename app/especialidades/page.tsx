@@ -9,7 +9,8 @@ import {
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowRight, Stethoscope, Baby, ShieldAlert, Activity } from "lucide-react"
+import { ArrowRight, Ribbon } from "lucide-react"
+import { UteroIcon } from "@/components/icons/utero"
 
 
 export default function SpecialtiesPage() {
@@ -73,13 +74,13 @@ export default function SpecialtiesPage() {
                     <motion.div variants={fadeIn} id="mastologia" className="scroll-mt-24">
                         <div className="flex items-center gap-4 mb-6">
                             <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
-                                <Stethoscope className="w-6 h-6" />
+                                <Ribbon className="w-6 h-6" />
                             </div>
-                            <h2 className="text-3xl font-bold text-foreground">Mastología y Patología Mamaria</h2>
+                            <h2 className="text-3xl font-bold text-foreground">Mastología (Patología Mamaria)</h2>
                         </div>
                         <div className="prose prose-slate dark:prose-invert max-w-none mb-6">
                             <p className="text-muted-foreground">
-                                La mastología es la especialidad dedicada a la prevención, diagnóstico y tratamiento de las afecciones de la glándula mamaria, tanto benignas como malignas. El control anual es fundamental para la detección temprana del cáncer de mama.
+                                La mastología es la especialidad dedicada a la prevención, diagnóstico y tratamiento de las afecciones de la glándula mamaria, tanto benignas como malignas. El control anual es fundamental para la detección temprana del cáncer de mama y es clave para el éxito terapéutico.
                             </p>
                         </div>
                         <Accordion type="single" collapsible className="w-full bg-card rounded-xl px-4 border border-border shadow-sm">
@@ -94,8 +95,9 @@ export default function SpecialtiesPage() {
                                 <AccordionContent className="text-muted-foreground">
                                     <ul className="list-disc pl-4 space-y-1">
                                         <li>Examen físico mamario detallado.</li>
-                                        <li>Solicitud y análisis de Mamografía Digital y Ecografía Mamaria.</li>
-                                        <li>Punciones biópsicas (guiadas por eco o estereotaxia) ante hallazgos sospechosos.</li>
+                                        <li>Realización de ecografías y Doppler mamario en el consultorio.</li>
+                                        <li>Solicitud y análisis de mamografía digital, tomosíntesis, ecografía mamaria y axilar, y resonancia magnética.</li>
+                                        <li>Indicación de punciones biópsicas (guiadas por ecografía o estereotaxia) ante hallazgos sospechosos.</li>
                                         <li>Cirugía conservadora de la mama y oncoplástica.</li>
                                     </ul>
                                 </AccordionContent>
@@ -109,20 +111,29 @@ export default function SpecialtiesPage() {
                     <motion.div variants={fadeIn} id="ginecologia" className="scroll-mt-24">
                         <div className="flex items-center gap-4 mb-6">
                             <div className="w-12 h-12 bg-chart-2/10 rounded-lg flex items-center justify-center text-chart-2">
-                                <Activity className="w-6 h-6" />
+                                <UteroIcon className="w-6 h-6" />
                             </div>
                             <h2 className="text-3xl font-bold text-foreground">Ginecología Integral</h2>
                         </div>
                         <div className="prose prose-slate dark:prose-invert max-w-none mb-6">
                             <p className="text-muted-foreground">
-                                Acompañamos a la mujer en todas las etapas de su vida, desde la adolescencia hasta la menopausia, priorizando la prevención y la salud reproductiva.
+                                Acompañamos a la mujer en todas las etapas de su vida: desde la adolescencia, atravesando la menopausia y hasta la vejez, priorizando la prevención y la salud sexual y reproductiva.
                             </p>
                         </div>
                         <Accordion type="single" collapsible className="w-full bg-card rounded-xl px-4 border border-border shadow-sm">
                             <AccordionItem value="item-1">
                                 <AccordionTrigger className="text-foreground">Controles periódicos</AccordionTrigger>
                                 <AccordionContent className="text-muted-foreground">
-                                    El control ginecológico anual incluye la toma de Papanicolau (PAP) y Colposcopía para la prevención del cáncer de cuello uterino, además de la revisión mamaria y ecográfica.
+                                    El control ginecológico incluye la toma de Papanicolaou (PAP), test de HPV y colposcopía para la prevención del cáncer de cuello uterino, además de la revisión mamaria y ecográfica.
+                                </AccordionContent>
+                            </AccordionItem>
+                            <AccordionItem value="item-oncologica">
+                                <AccordionTrigger className="text-foreground">Ginecología oncológica</AccordionTrigger>
+                                <AccordionContent className="text-muted-foreground">
+                                    <ul className="list-disc pl-4 space-y-1">
+                                        <li>Diagnóstico oportuno.</li>
+                                        <li>Screening de los cánceres más frecuentes.</li>
+                                    </ul>
                                 </AccordionContent>
                             </AccordionItem>
                             <AccordionItem value="item-2">
@@ -140,20 +151,6 @@ export default function SpecialtiesPage() {
                         </Accordion>
                     </motion.div>
 
-                    <hr className="my-8 border-border" />
-
-                    {/* Obstetricia */}
-                    <motion.div variants={fadeIn} id="obstetricia" className="scroll-mt-24">
-                        <div className="flex items-center gap-4 mb-6">
-                            <div className="w-12 h-12 bg-pink-50 dark:bg-pink-900/10 rounded-lg flex items-center justify-center text-pink-500">
-                                <Baby className="w-6 h-6" />
-                            </div>
-                            <h2 className="text-3xl font-bold text-foreground">Obstetricia</h2>
-                        </div>
-                        <p className="text-muted-foreground mb-6">
-                            Control prenatal, monitoreo del embarazo y asistencia del parto, asegurando el bienestar del binomio madre-hijo.
-                        </p>
-                    </motion.div>
                 </div>
 
                 <motion.div variants={fadeIn} className="mt-16 text-center">

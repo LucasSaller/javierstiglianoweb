@@ -89,10 +89,10 @@ export default function AboutPage() {
                             {/* Bio intro */}
                             <div className="prose prose-slate dark:prose-invert max-w-none">
                                 <p className="text-lg leading-relaxed text-muted-foreground italic">
-                                    "Mi compromiso es brindar una atención médica de excelencia, basada en la evidencia científica y la calidez humana."
+                                    “Mi compromiso es brindar una atención médica de excelencia, basada en la evidencia científica y la calidez humana.”
                                 </p>
                                 <p className="text-lg leading-relaxed text-muted-foreground">
-                                    Soy médico especialista en <strong>Ginecología y Obstetricia</strong> y <strong>Mastología</strong>, con un enfoque integral en la salud de la mujer. Mi práctica combina la rigurosidad científica, fruto de años de experiencia hospitalaria de alta complejidad, con un trato humano y personalizado.
+                                    Soy médico especialista en <strong>Ginecología y Obstetricia</strong> y <strong>Mastología</strong>, con un enfoque integral en la salud de la mujer. Mi práctica combina la rigurosidad científica, fruto de más de 20 años de experiencia hospitalaria y en el ámbito privado de alta complejidad, con una escucha activa y atención personalizada.
                                 </p>
                             </div>
 
@@ -108,6 +108,7 @@ export default function AboutPage() {
                                             <ul className="mt-2 space-y-1 text-muted-foreground">
                                                 <li>• Jefe de Patología Mamaria</li>
                                                 <li>• Director de la Unidad de Mastología</li>
+                                                <li>• Coordinador de la Residencia de Patología Mamaria</li>
                                             </ul>
                                         </CardContent>
                                     </Card>
@@ -134,7 +135,8 @@ export default function AboutPage() {
                                         { title: "Especialista Universitaria en Ginecología", org: "Universidad de Buenos Aires (UBA)" },
                                         { title: "Especialista en Mastología", org: "Sociedad Argentina de Mastología (SAMAS)" },
                                         { title: "Médico Legista", org: "Universidad Católica Argentina (UCA)" },
-                                        { title: "Magister en Educación para Profesionales de la Salud", org: "" },
+                                        { title: "Magíster en Educación para Profesionales de la Salud", org: "Instituto Universitario Hospital Italiano" },
+                                        { title: "Magíster en Mastología", org: "" },
                                     ].map((edu, i) => (
                                         <li key={i} className="flex gap-4 items-start">
                                             <div className="mt-1.5 w-2 h-2 rounded-full bg-primary shrink-0" />
@@ -159,6 +161,9 @@ export default function AboutPage() {
                                     </li>
                                     <li className="bg-muted/50 p-4 rounded-lg border border-border">
                                         <strong className="text-foreground">Prize to the Leader in Research</strong> (2019)
+                                    </li>
+                                    <li className="bg-muted/50 p-4 rounded-lg border border-border">
+                                        <strong className="text-foreground">Más de 20 premios y distinciones a trabajos científicos</strong>
                                     </li>
                                 </ul>
                             </motion.div>

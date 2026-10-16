@@ -71,7 +71,7 @@ export default function FAQPage() {
                         <AccordionItem value="item-1" className="border border-border rounded-lg px-4 bg-card shadow-sm hover:shadow-md transition-shadow">
                             <AccordionTrigger className="text-lg font-medium text-foreground">¿Cómo solicito un turno?</AccordionTrigger>
                             <AccordionContent className="text-muted-foreground">
-                                Podes solicitar turno las 24hs a través de nuestra plataforma online DrApp haciendo clic en el botón "Reservar Turno" de este sitio. También podes escribirnos por WhatsApp para consultas específicas o urgencias.
+                                Podés solicitar turno las 24 hs a través de nuestra plataforma online DrApp haciendo clic en el botón “Reservar turno” de este sitio. También podés escribirnos por WhatsApp para consultas específicas o urgencias.
                             </AccordionContent>
                         </AccordionItem>
                     </motion.div>
@@ -98,7 +98,7 @@ export default function FAQPage() {
                         <AccordionItem value="item-4" className="border border-border rounded-lg px-4 bg-card shadow-sm hover:shadow-md transition-shadow">
                             <AccordionTrigger className="text-lg font-medium text-foreground">¿Es dolorosa la punción mamaria?</AccordionTrigger>
                             <AccordionContent className="text-muted-foreground">
-                                Es un procedimiento tolerado muy bien por la mayoría de las pacientes. Se utiliza anestesia local para minimizar las molestias. Es un estudio rápido y fundamental para el diagnóstico preciso de nódulos o calcificaciones.
+                                Es un procedimiento tolerado muy bien por la mayoría de las pacientes. Se utiliza anestesia local para minimizar las molestias. Es un estudio rápido y fundamental para el diagnóstico preciso de nódulos o calcificaciones. Luego de la punción, se recomienda colocarse hielo 3 o 4 veces por día, no más de 7 minutos cada vez, para aliviar el dolor y evitar el hematoma.
                             </AccordionContent>
                         </AccordionItem>
                     </motion.div>
@@ -107,7 +107,27 @@ export default function FAQPage() {
                         <AccordionItem value="item-5" className="border border-border rounded-lg px-4 bg-card shadow-sm hover:shadow-md transition-shadow">
                             <AccordionTrigger className="text-lg font-medium text-foreground">¿Debo llevar estudios previos?</AccordionTrigger>
                             <AccordionContent className="text-muted-foreground">
-                                Sí, es muy importante que traigas todos tus estudios anteriores (mamografías, ecografías, resonancias, biopsias), no solo los informes sino también las imágenes.
+                                Sí, es muy importante que traigas todos tus estudios anteriores (mamografías, ecografías, resonancias, biopsias), no solo los informes sino también las imágenes. Si te los hiciste en un centro de salud que los tiene en una plataforma digital, traé tu usuario y clave para poder verlos directamente en la computadora.
+                            </AccordionContent>
+                        </AccordionItem>
+                    </motion.div>
+                    <motion.div variants={fadeIn}>
+                        <AccordionItem value="item-lugares" className="border border-border rounded-lg px-4 bg-card shadow-sm hover:shadow-md transition-shadow">
+                            <AccordionTrigger className="text-lg font-medium text-foreground text-left">¿En qué otros lugares atiende el doctor?</AccordionTrigger>
+                            <AccordionContent className="text-muted-foreground">
+                                También atiende en el <a href="https://www.hospitalposadas.gob.ar" target="_blank" rel="noopener noreferrer" className="text-primary underline">Hospital Nacional Prof. Alejandro Posadas</a> y en la Clínica Santa Isabel. Para pedir turno en esos lugares, consultá la página de cada institución.
+                            </AccordionContent>
+                        </AccordionItem>
+                    </motion.div>
+                    <motion.div variants={fadeIn}>
+                        <AccordionItem value="item-cirugia" className="border border-border rounded-lg px-4 bg-card shadow-sm hover:shadow-md transition-shadow">
+                            <AccordionTrigger className="text-lg font-medium text-foreground text-left">¿Cómo me preparo para una cirugía?</AccordionTrigger>
+                            <AccordionContent className="text-muted-foreground">
+                                <ul className="list-disc pl-4 space-y-2">
+                                    <li>Recordá hacer <strong>8 horas de ayuno</strong> antes de la hora de la cirugía (¡ni siquiera un chicle!). Solo podés tomar un sorbo de agua para la medicación que tomás habitualmente.</li>
+                                    <li>Traé todos los estudios prequirúrgicos y previos: ecografías, mamografías, biopsias, electrocardiograma, laboratorios y la <strong>autorización de la cirugía</strong>.</li>
+                                    <li>No podés entrar con lentes de contacto, dentadura postiza ni aros o piercings en el cuerpo.</li>
+                                </ul>
                             </AccordionContent>
                         </AccordionItem>
                     </motion.div>
