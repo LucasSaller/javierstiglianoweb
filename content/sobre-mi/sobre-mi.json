@@ -1,0 +1,99 @@
+{
+  "encabezado": {
+    "titulo": "Sobre el Dr. Javier Stigliano",
+    "subtitulo": "Especialista en Mastología y Ginecología con una sólida trayectoria hospitalaria, académica y de investigación."
+  },
+  "foto": "/dr-stigliano.jpg",
+  "cita": "Mi compromiso es brindar una atención médica de excelencia, basada en la evidencia científica y la calidez humana.",
+  "bio": {
+    "type": "root",
+    "children": [
+      {
+        "type": "p",
+        "children": [
+          {
+            "type": "text",
+            "text": "Soy médico especialista en "
+          },
+          {
+            "type": "text",
+            "text": "Ginecología y Obstetricia",
+            "bold": true
+          },
+          {
+            "type": "text",
+            "text": " y "
+          },
+          {
+            "type": "text",
+            "text": "Mastología",
+            "bold": true
+          },
+          {
+            "type": "text",
+            "text": ", con un enfoque integral en la salud de la mujer. Mi práctica combina la rigurosidad científica, fruto de más de 20 años de experiencia hospitalaria y en el ámbito privado de alta complejidad, con una escucha activa y atención personalizada."
+          }
+        ]
+      }
+    ]
+  },
+  "cargos": [
+    {
+      "institucion": "Hospital Nacional Posadas",
+      "estilo": "principal",
+      "puestos": [
+        "Jefe de Patología Mamaria",
+        "Director de la Unidad de Mastología",
+        "Coordinador de la Residencia de Patología Mamaria"
+      ]
+    },
+    {
+      "institucion": "Universidad de Buenos Aires (UBA)",
+      "estilo": "secundario",
+      "puestos": [
+        "Profesor Adjunto de Ginecología",
+        "Coordinador de la Unidad Docente Hospitalaria Posadas",
+        "Director de la Sede Posadas (Carrera Mastología)"
+      ]
+    }
+  ],
+  "formacion": [
+    {
+      "titulo": "Especialista Universitaria en Ginecología",
+      "institucion": "Universidad de Buenos Aires (UBA)"
+    },
+    {
+      "titulo": "Especialista en Mastología",
+      "institucion": "Sociedad Argentina de Mastología (SAMAS)"
+    },
+    {
+      "titulo": "Médico Legista",
+      "institucion": "Universidad Católica Argentina (UCA)"
+    },
+    {
+      "titulo": "Magíster en Educación para Profesionales de la Salud",
+      "institucion": "Universidad Hospital Italiano"
+    },
+    {
+      "titulo": "Magíster en Mastología",
+      "institucion": ""
+    }
+  ],
+  "distinciones": [
+    {
+      "titulo": "Personalidad Destacada en Salud",
+      "detalle": "Legislatura CABA (2021)",
+      "destacada": true
+    },
+    {
+      "titulo": "Prize to the Leader in Research",
+      "detalle": "2019",
+      "destacada": false
+    },
+    {
+      "titulo": "Más de 20 premios y distinciones a trabajos científicos",
+      "detalle": "",
+      "destacada": false
+    }
+  ]
+}

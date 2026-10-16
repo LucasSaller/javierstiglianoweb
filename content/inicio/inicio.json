@@ -1,0 +1,74 @@
+{
+  "portada": {
+    "etiqueta": "Atención en Haedo y CABA",
+    "tituloAntes": "Especialista en",
+    "tituloDestacado": "Mastología",
+    "tituloDespues": "Ginecología y Medicina Legal",
+    "subtitulo": "Dr. Javier Stigliano. Diagnóstico preciso, tratamiento oportuno y acompañamiento integral.",
+    "botonPrincipal": "Solicitar Turno Online",
+    "botonSecundario": "Conocer al Doctor"
+  },
+  "credenciales": [
+    {
+      "icono": "escudo",
+      "titulo": "Hospital Posadas",
+      "subtitulo": "Jefe de Patología Mamaria"
+    },
+    {
+      "icono": "medalla",
+      "titulo": "Docente UBA",
+      "subtitulo": "Profesor y Coordinador"
+    },
+    {
+      "icono": "manos",
+      "titulo": "Trato Humano",
+      "subtitulo": "Acompañamiento cercano"
+    }
+  ],
+  "areas": {
+    "titulo": "Áreas de Atención",
+    "texto": "Enfoque integral en la salud femenina, desde la prevención y el control anual hasta el diagnóstico y tratamiento de patologías complejas.",
+    "tarjetas": [
+      {
+        "icono": "lazo",
+        "color": "principal",
+        "titulo": "Mastología",
+        "subtitulo": "Especialidad principal",
+        "puntos": [
+          "Diagnóstico de nódulos y patologías.",
+          "Indicación de punciones y biopsias.",
+          "Cirugía mamaria y reconstrucción.",
+          "Asesoramiento genético."
+        ],
+        "enlace": "/especialidades#mastologia"
+      },
+      {
+        "icono": "utero",
+        "color": "secundario",
+        "titulo": "Ginecología Integral",
+        "subtitulo": "Controles y Salud Femenina",
+        "puntos": [
+          "Control ginecológico (PAP, HPV, colposcopía).",
+          "Anticoncepción y planificación.",
+          "Menopausia y climaterio.",
+          "Ginecología oncológica."
+        ],
+        "enlace": "/especialidades#ginecologia"
+      }
+    ]
+  },
+  "trayectoria": {
+    "foto": "/dr-stigliano.jpg",
+    "titulo": "Trayectoria y Compromiso",
+    "parrafoDestacado": "Como Jefe de Patología Mamaria del Hospital Nacional Posadas y docente de la UBA, combino la experiencia académica de alto nivel con una atención cálida y personalizada en el consultorio.",
+    "parrafo": "Entiendo que la salud mamaria genera ansiedades y dudas. Mi objetivo es brindarte claridad, un diagnóstico preciso y el mejor camino terapéutico, acompañándote en cada paso.",
+    "boton": "Leer Bio Completa"
+  },
+  "llamado": {
+    "titulo": "Tu salud es prioridad",
+    "texto": "Reservá tu turno de manera online o consultá por WhatsApp.",
+    "ubicaciones": "Atención en Haedo, CABA y Clínica Santa Isabel.",
+    "botonTurno": "Reservar Turno",
+    "botonWhatsapp": "Enviar WhatsApp"
+  }
+}

@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Tina (se generan al compilar)
+/public/admin
+/tina/__generated__

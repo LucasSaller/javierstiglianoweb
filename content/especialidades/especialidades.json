@@ -1,0 +1,69 @@
+{
+  "encabezado": {
+    "titulo": "Especialidades Médicas",
+    "subtitulo": "Abordaje integral de la salud femenina con tecnología de vanguardia y evidencia científica actualizada."
+  },
+  "especialidades": [
+    {
+      "ancla": "mastologia",
+      "icono": "lazo",
+      "color": "principal",
+      "titulo": "Patología Mamaria (Mastología)",
+      "descripcion": "La mastología es la especialidad dedicada a la prevención, diagnóstico y tratamiento de las afecciones de la glándula mamaria, tanto benignas como malignas. El control anual es fundamental para la detección temprana del cáncer de mama y es clave para el éxito terapéutico.",
+      "desplegables": [
+        {
+          "titulo": "¿Cuándo consultar a un mastólogo?",
+          "texto": "Se recomienda una consulta anual de control a partir de los 35-40 años, o antes si existen antecedentes familiares de cáncer de mama. También debe consultar si nota bultos, cambios en la piel, secreción por pezón o dolor persistente.",
+          "puntos": []
+        },
+        {
+          "titulo": "Procedimientos frecuentes",
+          "texto": "",
+          "puntos": [
+            "Examen físico mamario detallado.",
+            "Realización de ecografías y Doppler mamario en el consultorio.",
+            "Solicitud y análisis de mamografía digital, tomosíntesis, ecografía mamaria y axilar, y resonancia magnética.",
+            "Indicación de punciones biópsicas (guiadas por ecografía o estereotaxia) ante hallazgos sospechosos.",
+            "Cirugía conservadora de la mama y oncoplástica."
+          ]
+        }
+      ]
+    },
+    {
+      "ancla": "ginecologia",
+      "icono": "utero",
+      "color": "secundario",
+      "titulo": "Ginecología Integral",
+      "descripcion": "Acompañamos a la mujer en todas las etapas de su vida: desde la adolescencia, atravesando la menopausia y hasta la vejez, priorizando la prevención y la salud sexual y reproductiva.",
+      "desplegables": [
+        {
+          "titulo": "Controles periódicos",
+          "texto": "El control ginecológico incluye la toma de Papanicolaou (PAP), test de HPV y colposcopía para la prevención del cáncer de cuello uterino, además de la revisión mamaria y ecográfica.",
+          "puntos": []
+        },
+        {
+          "titulo": "Ginecología oncológica",
+          "texto": "",
+          "puntos": [
+            "Diagnóstico oportuno.",
+            "Screening de los cánceres más frecuentes."
+          ]
+        },
+        {
+          "titulo": "Anticoncepción y Planificación Familiar",
+          "texto": "Asesoramiento personalizado sobre métodos anticonceptivos (orales, DIU, implantes) acorde a las necesidades y antecedentes de cada paciente.",
+          "puntos": []
+        },
+        {
+          "titulo": "Menopausia y Climaterio",
+          "texto": "Tratamiento de los síntomas asociados al cese de la menstruación (sofocos, sequedad, cambios de humor) y prevención de la osteoporosis.",
+          "puntos": []
+        }
+      ]
+    }
+  ],
+  "llamado": {
+    "titulo": "¿Tenés dudas sobre tu salud?",
+    "boton": "Solicitar Turno de Consulta"
+  }
+}

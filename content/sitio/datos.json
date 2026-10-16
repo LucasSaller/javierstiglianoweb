@@ -1,0 +1,33 @@
+{
+  "nombre": "Dr. Javier Stigliano",
+  "especialidadCorta": "Mastología y Ginecología",
+  "whatsapp": "5491130246736",
+  "email": "consultoriostigliano@gmail.com",
+  "instagram": "doctorstigliano",
+  "urlTurnosOnline": "https://consultorioginecologiaymastologiastigliano.drapp.com.ar",
+  "consultorios": [
+    {
+      "nombre": "Consultorio Haedo",
+      "direccion": "Remedios de Escalada de San Martín 47, 1º piso Dto D",
+      "localidad": "Haedo, Provincia de Buenos Aires",
+      "horario": "Jueves: 14:00 - 18:00 hs",
+      "telefono": "2081-6169"
+    },
+    {
+      "nombre": "Consultorio CABA",
+      "direccion": "Rosario 130, 1º piso, Dto. 4",
+      "localidad": "Ciudad Autónoma de Buenos Aires",
+      "horario": "Miércoles: 15:00 - 17:00 hs",
+      "telefono": "11 7544-5430"
+    },
+    {
+      "nombre": "Clínica Santa Isabel",
+      "direccion": "Atención Externa",
+      "localidad": "CABA",
+      "horario": "Lunes: 16:00 - 20:00 hs",
+      "telefono": "4670-8000"
+    }
+  ],
+  "descripcionPie": "Especialista en Mastología, Ginecología y Medicina Legal. Atención personalizada con evidencia científica y sólida trayectoria hospitalaria.",
+  "avisoLegal": "La información en este sitio es educativa y no reemplaza la consulta profesional. Ante una emergencia, acuda a la guardia más cercana."
+}

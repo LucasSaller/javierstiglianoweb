@@ -1,0 +1,31 @@
+{
+  "encabezado": {
+    "titulo": "Contacto y Turnos",
+    "subtitulo": "Estamos para atenderte. Reservá tu turno online de forma rápida o escribinos por WhatsApp para consultas."
+  },
+  "turnosOnline": {
+    "etiqueta": "Recomendado",
+    "titulo": "Turnos Online",
+    "texto": "Gestioná tu turno de manera autónoma las 24hs a través de nuestra plataforma digital.",
+    "boton": "Reservar Turno Ahora",
+    "nota": "Plataforma segura DrApp"
+  },
+  "whatsapp": {
+    "titulo": "WhatsApp",
+    "texto": "Escribinos para consultas puntuales o urgencias. Te responderemos a la brevedad.",
+    "boton": "Enviar Mensaje",
+    "nota": "Respuesta habitual: Lun a Vie 9-18hs"
+  },
+  "formulario": {
+    "titulo": "Envianos un mensaje",
+    "motivos": [
+      "Consulta por turnos",
+      "Consulta de mastología",
+      "Consulta de ginecología",
+      "Otro"
+    ]
+  },
+  "tituloConsultorios": "Nuestros Consultorios",
+  "textoInstagram": "Seguinos en Instagram para ver novedades",
+  "avisoSinTurno": "Si decidís asistir sin turno previo, confirmá telefónicamente que el doctor se encuentre atendiendo."
+}
