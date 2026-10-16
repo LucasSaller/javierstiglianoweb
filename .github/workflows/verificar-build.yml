@@ -23,7 +23,7 @@ jobs:
         continue-on-error: true
       - name: Versiones instaladas
         run: |
-          versiones=$(node -e "for (const n of ['tinacms','@tinacms/cli','next','react']) { try { console.log(n+'@'+require(require.resolve(n+'/package.json',{paths:[process.cwd()]})).version) } catch(e) { console.log(n+': ?') } }" | tr '\n' ' ')
+          versiones=$(for n in tinacms @tinacms/cli next react; do echo -n "$n@$(node -p "require('./node_modules/$n/package.json').version") "; done)
           echo "::notice title=versiones::$versiones"
       - name: Revisar tipos (todos los errores juntos)
         shell: bash
