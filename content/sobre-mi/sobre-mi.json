@@ -5,38 +5,7 @@
   },
   "foto": "/dr-stigliano.jpg",
   "cita": "Mi compromiso es brindar una atención médica de excelencia, basada en la evidencia científica y la calidez humana.",
-  "bio": {
-    "type": "root",
-    "children": [
-      {
-        "type": "p",
-        "children": [
-          {
-            "type": "text",
-            "text": "Soy médico especialista en "
-          },
-          {
-            "type": "text",
-            "text": "Ginecología y Obstetricia",
-            "bold": true
-          },
-          {
-            "type": "text",
-            "text": " y "
-          },
-          {
-            "type": "text",
-            "text": "Mastología",
-            "bold": true
-          },
-          {
-            "type": "text",
-            "text": ", con un enfoque integral en la salud de la mujer. Mi práctica combina la rigurosidad científica, fruto de más de 20 años de experiencia hospitalaria y en el ámbito privado de alta complejidad, con una escucha activa y atención personalizada."
-          }
-        ]
-      }
-    ]
-  },
+  "bio": "Soy médico especialista en **Ginecología y Obstetricia** y **Mastología**, con un enfoque integral en la salud de la mujer. Mi práctica combina la rigurosidad científica, fruto de más de 20 años de experiencia hospitalaria y en el ámbito privado de alta complejidad, con una escucha activa y atención personalizada.",
   "cargos": [
     {
       "institucion": "Hospital Nacional Posadas",

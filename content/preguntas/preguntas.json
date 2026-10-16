@@ -6,192 +6,31 @@
   "preguntas": [
     {
       "pregunta": "¿Cómo solicito un turno?",
-      "respuesta": {
-        "type": "root",
-        "children": [
-          {
-            "type": "p",
-            "children": [
-              {
-                "type": "text",
-                "text": "Podés solicitar turno las 24 hs a través de nuestra plataforma online DrApp haciendo clic en el botón “Reservar turno” de este sitio. También podés escribirnos por WhatsApp para consultas específicas o urgencias."
-              }
-            ]
-          }
-        ]
-      }
+      "respuesta": "Podés solicitar turno las 24 hs a través de nuestra plataforma online DrApp haciendo clic en el botón “Reservar turno” de este sitio. También podés escribirnos por WhatsApp para consultas específicas o urgencias."
     },
     {
       "pregunta": "¿Qué obras sociales atienden?",
-      "respuesta": {
-        "type": "root",
-        "children": [
-          {
-            "type": "p",
-            "children": [
-              {
-                "type": "text",
-                "text": "Atendemos de forma particular y por OSDE y OMINT. Para otras coberturas, emitimos factura para reintegro, pero te sugerimos consultar previamente con tu obra social los montos a reintegrar."
-              }
-            ]
-          }
-        ]
-      }
+      "respuesta": "Atendemos de forma particular y por OSDE y OMINT. Para otras coberturas, emitimos factura para reintegro, pero te sugerimos consultar previamente con tu obra social los montos a reintegrar."
     },
     {
       "pregunta": "¿A partir de qué edad debo hacerme una mamografía?",
-      "respuesta": {
-        "type": "root",
-        "children": [
-          {
-            "type": "p",
-            "children": [
-              {
-                "type": "text",
-                "text": "La Sociedad Argentina de Mastología recomienda una mamografía anual a partir de los 40 años en mujeres asintomáticas y sin antecedentes directos. Si tenés antecedentes familiares de cáncer de mama, consultá para iniciar los controles antes."
-              }
-            ]
-          }
-        ]
-      }
+      "respuesta": "La Sociedad Argentina de Mastología recomienda una mamografía anual a partir de los 40 años en mujeres asintomáticas y sin antecedentes directos. Si tenés antecedentes familiares de cáncer de mama, consultá para iniciar los controles antes."
     },
     {
       "pregunta": "¿Es dolorosa la punción mamaria?",
-      "respuesta": {
-        "type": "root",
-        "children": [
-          {
-            "type": "p",
-            "children": [
-              {
-                "type": "text",
-                "text": "Es un procedimiento tolerado muy bien por la mayoría de las pacientes. Se utiliza anestesia local para minimizar las molestias. Es un estudio rápido y fundamental para el diagnóstico preciso de nódulos o calcificaciones. Luego de la punción, se recomienda colocarse hielo 3 o 4 veces por día, no más de 7 minutos cada vez, para aliviar el dolor y evitar el hematoma."
-              }
-            ]
-          }
-        ]
-      }
+      "respuesta": "Es un procedimiento tolerado muy bien por la mayoría de las pacientes. Se utiliza anestesia local para minimizar las molestias. Es un estudio rápido y fundamental para el diagnóstico preciso de nódulos o calcificaciones. Luego de la punción, se recomienda colocarse hielo 3 o 4 veces por día, no más de 7 minutos cada vez, para aliviar el dolor y evitar el hematoma."
     },
     {
       "pregunta": "¿Debo llevar estudios previos?",
-      "respuesta": {
-        "type": "root",
-        "children": [
-          {
-            "type": "p",
-            "children": [
-              {
-                "type": "text",
-                "text": "Sí, es muy importante que traigas todos tus estudios anteriores (mamografías, ecografías, resonancias, biopsias), no solo los informes sino también las imágenes. Si te los hiciste en un centro de salud que los tiene en una plataforma digital, traé tu usuario y clave para poder verlos directamente en la computadora."
-              }
-            ]
-          }
-        ]
-      }
+      "respuesta": "Sí, es muy importante que traigas todos tus estudios anteriores (mamografías, ecografías, resonancias, biopsias), no solo los informes sino también las imágenes. Si te los hiciste en un centro de salud que los tiene en una plataforma digital, traé tu usuario y clave para poder verlos directamente en la computadora."
     },
     {
       "pregunta": "¿En qué otros lugares atiende el doctor?",
-      "respuesta": {
-        "type": "root",
-        "children": [
-          {
-            "type": "p",
-            "children": [
-              {
-                "type": "text",
-                "text": "También atiende en el "
-              },
-              {
-                "type": "a",
-                "url": "https://www.hospitalposadas.gob.ar",
-                "children": [
-                  {
-                    "type": "text",
-                    "text": "Hospital Nacional Prof. Alejandro Posadas"
-                  }
-                ]
-              },
-              {
-                "type": "text",
-                "text": " y en la Clínica Santa Isabel. Para pedir turno en esos lugares, consultá la página de cada institución."
-              }
-            ]
-          }
-        ]
-      }
+      "respuesta": "También atiende en el [Hospital Nacional Prof. Alejandro Posadas](https://www.hospitalposadas.gob.ar) y en la Clínica Santa Isabel. Para pedir turno en esos lugares, consultá la página de cada institución."
     },
     {
       "pregunta": "¿Cómo me preparo para una cirugía?",
-      "respuesta": {
-        "type": "root",
-        "children": [
-          {
-            "type": "ul",
-            "children": [
-              {
-                "type": "li",
-                "children": [
-                  {
-                    "type": "lic",
-                    "children": [
-                      {
-                        "type": "text",
-                        "text": "Recordá hacer "
-                      },
-                      {
-                        "type": "text",
-                        "text": "8 horas de ayuno",
-                        "bold": true
-                      },
-                      {
-                        "type": "text",
-                        "text": " antes de la hora de la cirugía (¡ni siquiera un chicle!). Solo podés tomar un sorbo de agua para la medicación que tomás habitualmente."
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "li",
-                "children": [
-                  {
-                    "type": "lic",
-                    "children": [
-                      {
-                        "type": "text",
-                        "text": "Traé todos los estudios prequirúrgicos y previos: ecografías, mamografías, biopsias, electrocardiograma, laboratorios y la "
-                      },
-                      {
-                        "type": "text",
-                        "text": "autorización de la cirugía",
-                        "bold": true
-                      },
-                      {
-                        "type": "text",
-                        "text": "."
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "li",
-                "children": [
-                  {
-                    "type": "lic",
-                    "children": [
-                      {
-                        "type": "text",
-                        "text": "No podés entrar con lentes de contacto, dentadura postiza ni aros o piercings en el cuerpo."
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
+      "respuesta": "* Recordá hacer **8 horas de ayuno** antes de la hora de la cirugía (¡ni siquiera un chicle!). Solo podés tomar un sorbo de agua para la medicación que tomás habitualmente.\n* Traé todos los estudios prequirúrgicos y previos: ecografías, mamografías, biopsias, electrocardiograma, laboratorios y la **autorización de la cirugía**.\n* No podés entrar con lentes de contacto, dentadura postiza ni aros o piercings en el cuerpo."
     }
   ],
   "cierre": {
